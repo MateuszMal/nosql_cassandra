@@ -1,4 +1,4 @@
-package com.nosql.cassandra.springboot.cassandara;
+package com.nosql.springboot.cassandara;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

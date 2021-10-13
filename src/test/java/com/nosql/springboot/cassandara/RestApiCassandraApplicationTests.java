@@ -1,4 +1,4 @@
-package com.nosql.cassandra.springboot.cassandara;
+package com.nosql.springboot.cassandara;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
