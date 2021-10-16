@@ -16,9 +16,8 @@ import java.util.List;
 @NoArgsConstructor
 public class Project {
     @PrimaryKey
-    private Long id;
+    private Integer id;
     private String projectName;
     private LocalDate startProjectDate;
     private List<Employee> employeeList;
-
 }

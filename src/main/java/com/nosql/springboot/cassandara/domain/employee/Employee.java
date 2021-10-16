@@ -7,6 +7,7 @@ import org.springframework.data.cassandra.core.mapping.PrimaryKey;
 import org.springframework.data.cassandra.core.mapping.Table;
 
 import java.time.LocalDate;
+import java.time.OffsetDateTime;
 
 @Data
 @Table
@@ -14,7 +15,7 @@ import java.time.LocalDate;
 @NoArgsConstructor
 public class Employee {
     @PrimaryKey
-    private Long id;
+    private Integer id;
     private String firstName;
     private String lastName;
     private LocalDate birthDate;

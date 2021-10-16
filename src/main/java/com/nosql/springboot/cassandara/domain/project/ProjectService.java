@@ -18,7 +18,7 @@ public class ProjectService {
         return projectRepository.findAll();
     }
 
-    public Project fecthProjectById(Long id) {
+    public Project fecthProjectById(Integer id) {
         Validator.checkIdIsNull(id);
         return projectRepository
                 .findById(id)

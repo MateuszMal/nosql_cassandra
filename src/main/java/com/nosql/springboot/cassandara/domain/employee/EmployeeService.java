@@ -19,7 +19,7 @@ public class EmployeeService {
         return employeeRepository.findAll();
     }
 
-    public Employee fetchEmployeeById(Long id) {
+    public Employee fetchEmployeeById(Integer id) {
         Validator.checkIdIsNull(id);
         return employeeRepository
                 .findById(id)
@@ -30,7 +30,7 @@ public class EmployeeService {
         return employeeRepository.save(employee);
     }
 
-    public Employee updateEmployee(Long id, Employee employee) {
+    public Employee updateEmployee(Integer id, Employee employee) {
         Validator.checkIdIsNull(id);
         Employee updatedEmployee = employeeRepository.findById(id).
                 orElseThrow(() -> new EntityNotFoundException("Employee [" + id + "] not found."));
@@ -38,7 +38,7 @@ public class EmployeeService {
         return employeeRepository.save(updatedEmployee);
     }
 
-    public void deleteEmployeeById(Long id) {
+    public void deleteEmployeeById(Integer id) {
         Validator.checkIdIsNull(id);
         employeeRepository.deleteById(id);
     }

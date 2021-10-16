@@ -1,7 +1,16 @@
+#spring:
+#  data:
+#    cassandra:
+#      port: 9042
+#      contact-points: mycassandra
+#      keyspace-name: mykeyspace
+#      entity-base-package: com.nosql.springboot.cassandara.domain.employee
+
 spring:
   data:
     cassandra:
-      port: 9042
-      contact-points: mycassandra
-      keyspace-name: mykeyspace
+      contact-points: mycassandra,cassandra2
+      keyspacename: employeeKeySpace
+      ports:
+        - 9043:9042
       entity-base-package: com.nosql.springboot.cassandara.domain.employee

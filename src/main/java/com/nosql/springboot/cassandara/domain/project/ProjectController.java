@@ -22,7 +22,7 @@ public class ProjectController {
     }
 
     @GetMapping("/projects/{id}")
-    public ResponseEntity<Project> fetchProjectById(@PathVariable Long id) {
+    public ResponseEntity<Project> fetchProjectById(@PathVariable Integer id) {
         Project project = projectService.fecthProjectById(id);
         return ResponseEntity.status(HttpStatus.OK).body(project);
     }

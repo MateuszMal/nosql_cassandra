@@ -22,7 +22,7 @@ public class EmployeeController {
     }
 
     @GetMapping("/employees/{id}")
-    public ResponseEntity<Employee> fetchEmployeeById(@PathVariable Long id) {
+    public ResponseEntity<Employee> fetchEmployeeById(@PathVariable Integer id) {
         Employee employee = employeeService.fetchEmployeeById(id);
         return ResponseEntity.status(HttpStatus.OK).body(employee);
     }
@@ -34,13 +34,13 @@ public class EmployeeController {
     }
 
     @PutMapping("/employess/{id}")
-    public ResponseEntity<Employee> updateEmployee(@PathVariable Long id, @RequestBody Employee employee) {
+    public ResponseEntity<Employee> updateEmployee(@PathVariable Integer id, @RequestBody Employee employee) {
         Employee employeeDto = employeeService.updateEmployee(id, employee);
         return ResponseEntity.status(HttpStatus.OK).body(employeeDto);
     }
 
     @DeleteMapping("/employee/{id}")
-    public ResponseEntity<Void> deleteEmployee(@PathVariable Long id) {
+    public ResponseEntity<Void> deleteEmployee(@PathVariable Integer id) {
         employeeService.deleteEmployeeById(id);
         return new ResponseEntity<>(HttpStatus.OK);
     }

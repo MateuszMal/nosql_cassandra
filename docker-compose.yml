@@ -2,6 +2,24 @@ version: '3.1'
 services:
   mycassandra:
     image: cassandra
-    container_name: mycassandra
+    volumes:
+      - ./scripts/tables.cql:/tables.cql
+      - /scripts/0keyspace.cql:/0keyspace.cql
+      - /scripts/1tables.cql:/1tables.cql
+      - /scripts/2data.cql:/2data.cql
     ports:
-      - "9042:9042"
+      - 9042:9042
+    environment:
+      - CASSANDRA_SEEDS=mycassandra,cassandra2
+      - CASSANDRA_CLUSTER_NAME=cassandra-cluster
+      - MAX_HEAP_SIZE=2G
+      - HEAP_NEWSIZE=200M
+  cassandra2:
+    image: cassandra
+    ports:
+      - 9043:9042
+    environment:
+      - CASSANDRA_SEEDS=mycassandra,cassandra2
+      - CASSANDRA_CLUSTER_NAME=cassandra-cluster
+      - MAX_HEAP_SIZE=2G
+      - HEAP_NEWSIZE=200M
