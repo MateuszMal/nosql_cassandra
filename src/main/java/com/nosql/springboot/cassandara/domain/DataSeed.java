@@ -21,7 +21,7 @@ public class DataSeed implements InitializingBean {
 
     public void createRandomEmployees() {
         List<Employee> employeeList = employeeGenerator.generate(5000);
-        int employeeId = 3;
+        int employeeId = 1;
         for (Employee employee : employeeList) {
             employee.setId(employeeId++);
         }

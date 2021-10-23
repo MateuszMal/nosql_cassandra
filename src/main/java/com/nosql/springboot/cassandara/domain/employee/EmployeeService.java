@@ -31,16 +31,16 @@ public class EmployeeService {
 
     public Employee updateEmployee(Integer id, Employee employee) {
         Validator.checkIdIsNull(id);
+        Validator.checkIsStringBlank(employee);
         Employee updatedEmployee = employeeRepository.findById(id).
                 orElseThrow(() -> new EntityNotFoundException("Employee [" + id + "] not found."));
         updatedEmployee.updateEmployee(employee);
         return employeeRepository.save(employee);
     }
 
+
     public void deleteEmployeeById(Integer id) {
         Validator.checkIdIsNull(id);
         employeeRepository.deleteById(id);
     }
-
-
 }
