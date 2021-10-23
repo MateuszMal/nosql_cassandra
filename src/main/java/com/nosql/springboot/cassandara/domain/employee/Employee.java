@@ -7,7 +7,6 @@ import org.springframework.data.cassandra.core.mapping.PrimaryKey;
 import org.springframework.data.cassandra.core.mapping.Table;
 
 import java.time.LocalDate;
-import java.time.OffsetDateTime;
 
 @Data
 @Table
@@ -18,16 +17,19 @@ public class Employee {
     private Integer id;
     private String firstName;
     private String lastName;
-    private LocalDate birthDate;
+    private LocalDate dateOfEmployment;
+    private String emailAddress;
+    private String deviceMacAddress;
+    private String password;
 
     public void updateEmployee(Employee employee) {
+        this.id= employee.getId();
         this.firstName = employee.getFirstName();
         this.lastName = employee.getLastName();
-        this.birthDate = employee.getBirthDate();
+        this.dateOfEmployment = employee.getDateOfEmployment();
+        this.emailAddress = employee.getEmailAddress();
+        this.deviceMacAddress = employee.getDeviceMacAddress();
+        this.password = employee.getPassword();
     }
-
-//    public static Employee createNew(){
-//
-//    }
 
 }

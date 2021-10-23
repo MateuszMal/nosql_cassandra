@@ -1,7 +1,6 @@
 package com.nosql.springboot.cassandara.domain.employee;
 
 import com.nosql.springboot.common.EntityNotFoundException;
-import com.nosql.springboot.common.NullIdException;
 import com.nosql.springboot.common.Validator;
 import org.springframework.stereotype.Service;
 
@@ -35,7 +34,7 @@ public class EmployeeService {
         Employee updatedEmployee = employeeRepository.findById(id).
                 orElseThrow(() -> new EntityNotFoundException("Employee [" + id + "] not found."));
         updatedEmployee.updateEmployee(employee);
-        return employeeRepository.save(updatedEmployee);
+        return employeeRepository.save(employee);
     }
 
     public void deleteEmployeeById(Integer id) {
